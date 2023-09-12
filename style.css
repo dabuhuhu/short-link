@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #cccccc;
+    background-color: #f4f4f4;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -9,55 +9,35 @@ body {
 }
 
 .container {
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
     text-align: center;
+    max-width: 400px;
 }
 
-.message {
-    color: #000000;
+h1.headline {
+    color: #333333;
     font-size: 24px;
     margin-bottom: 20px;
 }
 
-.input-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-label {
-    font-weight: bold;
-    margin-bottom: 5px;
+input[type="url"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     font-size: 18px;
-}
-
-.input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
     outline: none;
-}
-
-input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+    margin-bottom: 10px;
 }
 
 input[type="submit"] {
-    background-color: #000000;
+    background-color: #333333;
     color: #fff;
     border: none;
-    padding: 10px;
+    padding: 12px 20px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -65,12 +45,12 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #5c5c5c;
+    background-color: #444444;
 }
 
 p#message {
     margin-top: 20px;
     font-weight: bold;
-    color: #000000;
+    color: #333333;
     font-size: 18px;
 }
