@@ -25,8 +25,20 @@ document.getElementById("myinput").onclick = function() {
         return response.json();
     }) 
     .then(function(data) { 
+        var shortURL = data.shortURL;
         var messageElement = document.getElementById("message");
-        messageElement.innerHTML = "Your short link is <br><a href='" + data.shortURL + "' target='_blank'>" + data.shortURL + "</a>";
+        messageElement.innerHTML = "Your short link is <br><a href='" + shortURL + "' target='_blank'>" + shortURL + "</a>";
+        
+        // Copy the short URL to the clipboard
+        var tempInput = document.createElement("input");
+        tempInput.style = "position: absolute; left: -1000px; top: -1000px";
+        tempInput.value = shortURL;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+        
+        messageElement.innerHTML += "<br>Short URL copied to clipboard!";
     })
     .catch(function(error) {
         console.error("Error: " + error.message);
