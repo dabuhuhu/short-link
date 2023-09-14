@@ -1,6 +1,8 @@
+// script.js
 document.getElementById("myinput").onclick = function() {
     var longUrl = document.getElementById("longUrl").value;
-    
+    var customPath = document.getElementById("customPath").value; // Added to get custom path
+
     if (!longUrl) {
         document.getElementById("message").innerHTML = "Please provide a long URL.";
         return;
@@ -9,9 +11,10 @@ document.getElementById("myinput").onclick = function() {
     var data = {
         "domain": "link.dabuhu.com", // Use link.dabuhu.com as the short domain
         "originalURL": longUrl,
-        "allowDuplicates": false
+        "allowDuplicates": false,
+        "path": customPath // Include the custom path if provided
     }; 
-    
+
     fetch('https://api.short.cm/links/public', {
         method: 'post',
         headers: {
@@ -45,6 +48,7 @@ document.getElementById("myinput").onclick = function() {
         document.getElementById("message").innerHTML = "Error: URL could not be shortened.";
     });
 
-    // Clear input field
+    // Clear input fields
     document.getElementById("longUrl").value = '';
+    document.getElementById("customPath").value = ''; // Clear the custom path input
 }
