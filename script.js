@@ -25,7 +25,7 @@ document.getElementById("myinput").onclick = function() {
         headers: {
             'accept': 'application/json',
             'Content-Type': 'application/json',
-            'authorization': 'pk_fmLeuVfReDZAL9Rc' // Replace with your API key
+            'authorization': 'pk_PccpgMAEi74cSaaA' // Replace with your API key
         },
         body: JSON.stringify(data)
     })
